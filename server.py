@@ -38,6 +38,9 @@ while True:
     game_id = (id_count-1)//2
 
     if id_count%2 == 1:
-
-
+        games[game_id] = Game(game_id)
+        print("New game created.")
+    else:
+        games[game_id].ready = True
+        player = 1
     start_new_thread(threaded_client, (conn))
