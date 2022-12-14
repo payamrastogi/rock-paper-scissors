@@ -16,7 +16,7 @@ class Game:
         """
         return self.moves[player]
 
-    def player(self, player, move):
+    def play(self, player, move):
         self.moves[player] = move
         if player == 0:
             self.p1_move_locked = True
