@@ -11,7 +11,7 @@ class Button:
         self.height = 100
 
     def draw(self, win):
-        pygame.draw.rect(win, self.color, self.x, self.y, self.width, self.height)
+        pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.height))
         font = pygame.font.SysFont("comicsans", 40)
         text = font.render(self.text, 1, (255, 255, 255))
         win.blit(text, (self.x + round(self.width/2) - round(text.get_width()/2), self.y + round(self.height/2) - round(text.get_height()/2)))

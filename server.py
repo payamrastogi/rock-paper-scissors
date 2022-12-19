@@ -46,14 +46,15 @@ def threaded_client(conn, player, game_id):
                     conn.sendall(pickle.dumps(reply))
             else:
                 break;
-        except:
+        except Exception as e:
+            print(e)
             break;
     print("Connection lost.")
     try:
         del games[game_id]
         print(f"Aborting game: {game_id}")
-    except:
-        pass
+    except Exception as e:
+        print(e)
     id_count -= 1
     conn.close()
 
